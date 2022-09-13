@@ -1,5 +1,5 @@
 def call(String imageName) {
-       yaml """
+  """
 kind: Pod
 spec:
   containers:
