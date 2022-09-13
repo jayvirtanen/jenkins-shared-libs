@@ -1,9 +1,9 @@
-def call(String imageName) {
+def call() {
   """
 kind: Pod
 spec:
   containers:
-  - name: ${imageName}
+  - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     imagePullPolicy: Always
     command:
