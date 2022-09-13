@@ -8,5 +8,6 @@ spec:
     imagePullPolicy: Always
     command:
     - cat
+    tty: true
  """   
 }
