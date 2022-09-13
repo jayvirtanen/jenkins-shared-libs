@@ -1,13 +1,9 @@
-def call(body) {
-def pipelineParams= [:]
-body.resolveStrategy = Closure.DELEGATE_FIRST
-body.delegate = pipelineParams
-body()
+def call(String imageName) {
        yaml """
 kind: Pod
 spec:
   containers:
-  - name: kaniko
+  - name: ${imageName}
     image: gcr.io/kaniko-project/executor:debug
     imagePullPolicy: Always
     command:
