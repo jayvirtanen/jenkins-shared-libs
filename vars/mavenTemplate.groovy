@@ -9,5 +9,12 @@ spec:
     command:
     - cat
     tty: true
+  - name: jnlp
+    image: cloudbees/cloudbees-core-agent
+    resources:
+      requests:
+        memory: "300Mi"
+      limits:
+        memory: "300Mi"
  """   
 }
