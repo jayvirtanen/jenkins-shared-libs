@@ -10,6 +10,7 @@ spec:
     - cat
     tty: true
   - name: jnlp
+    image: jenkins/inbound-agent
     securityContext:
       runAsUser: 0
  """   
