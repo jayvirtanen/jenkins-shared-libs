@@ -16,7 +16,7 @@ spec:
         memory: "300Mi"
       limits:
         memory: "300Mi"
-   securityContext:
-     runAsUser: 0
+    securityContext:
+      runAsUser: 0
  """   
 }
