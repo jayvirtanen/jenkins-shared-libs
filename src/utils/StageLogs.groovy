@@ -59,6 +59,27 @@ class StageLogs implements Serializable {
     return getStageResults( build ).findAll{ it.result == 'FAILURE'}
     }
 
+@NonCPS
+List<Map> getStageResults( RunWrapper build ) {
+
+    // Get all pipeline nodes that represent stages
+    def visitor = new PipelineNodeGraphVisitor( build.rawBuild )
+    def stages = visitor.pipelineNodes.findAll{ it.type == FlowNodeWrapper.NodeType.STAGE }
+
+    return stages.collect{ stage ->
+
+        // Get all the errors from the stage
+        def errorActions = stage.getPipelineActions( ErrorAction )
+        def errors = errorActions?.collect{ it.error }.unique()
+
+        return [ 
+            id: stage.id, 
+            displayName: stage.displayName, 
+            result: "${stage.status.result}",
+            errors: errors
+        ]
+    }
+}
     @NonCPS
     static private boolean isNamedStageStartNode(FlowNode node) {
         return Objects.equals(((StepStartNode) node).getStepName(), "Stage") && !Objects.equals(node.getDisplayFunctionName(), "stage");
