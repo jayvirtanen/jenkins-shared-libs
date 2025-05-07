@@ -13,9 +13,6 @@ import java.util.stream.Collectors
 
 class StageLogs implements Serializable {
 
-    StageLogs(){
-        println("init")
-    }
     // Recursively check flowNode parents until we find a stage
     @NonCPS
     static String getFlowNodeStage(FlowNode flowNode) {
