@@ -52,6 +52,11 @@ class StageLogs implements Serializable {
         }
         return logs
     }
+    
+    @NonCPS
+    List<Map> getFailedStages( RunWrapper build ) {
+    return getStageResults( build ).findAll{ it.result == 'FAILURE' 
+    }
 
     @NonCPS
     static private boolean isNamedStageStartNode(FlowNode node) {
