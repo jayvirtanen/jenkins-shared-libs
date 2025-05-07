@@ -1,12 +1,10 @@
 package utils
-import org.dcube.IStepExecutor
-import org.dcube.ioc.ContextRegistry
 
 class HelloWorld implements Serializable {
     private String _solutionPath
 
-    HelloWorld(String solutionPath) {
-        _solutionPath = solutionPath
+    HelloWorld() {
+        echo "hello"
     }
 
     void build() {
