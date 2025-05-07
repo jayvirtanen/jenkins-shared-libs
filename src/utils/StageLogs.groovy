@@ -55,7 +55,7 @@ class StageLogs implements Serializable {
     
     @NonCPS
     List<Map> getFailedStages( RunWrapper build ) {
-    return getStageResults( build ).findAll{ it.result == 'FAILURE' 
+    return getStageResults( build ).findAll{ it.result == 'FAILURE'}
     }
 
     @NonCPS
