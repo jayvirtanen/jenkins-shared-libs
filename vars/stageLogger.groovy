@@ -1,3 +1,4 @@
+def call() {
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -51,3 +52,5 @@ import java.util.stream.Collectors
     static private boolean isNamedStageStartNode(FlowNode node) {
         return Objects.equals(((StepStartNode) node).getStepName(), "Stage") && !Objects.equals(node.getDisplayFunctionName(), "stage");
     }
+
+}
