@@ -1,4 +1,3 @@
-def call() {
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -10,6 +9,7 @@ import org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode
 import org.jenkinsci.plugins.workflow.job.WorkflowRun
 import java.util.stream.Collectors
 
+def call() {
     // Recursively check flowNode parents until we find a stage
     @NonCPS
     static String getFlowNodeStage(FlowNode flowNode) {
