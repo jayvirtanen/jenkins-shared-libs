@@ -2,6 +2,7 @@ package utils
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
+import org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper
 import org.jenkinsci.plugins.workflow.actions.LabelAction
 import org.jenkinsci.plugins.workflow.actions.LogAction
 import org.jenkinsci.plugins.workflow.graph.FlowNode
