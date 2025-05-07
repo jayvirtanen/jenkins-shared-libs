@@ -1,3 +1,4 @@
+package utils
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -9,6 +10,7 @@ import org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode
 import org.jenkinsci.plugins.workflow.job.WorkflowRun
 import java.util.stream.Collectors
 
+class stageLogs implements Serializable{
     // Recursively check flowNode parents until we find a stage
     @NonCPS
     static String getFlowNodeStage(FlowNode flowNode) {
@@ -51,3 +53,4 @@ import java.util.stream.Collectors
     static private boolean isNamedStageStartNode(FlowNode node) {
         return Objects.equals(((StepStartNode) node).getStepName(), "Stage") && !Objects.equals(node.getDisplayFunctionName(), "stage");
     }
+}
